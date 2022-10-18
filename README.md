@@ -1,7 +1,8 @@
+<<<<<<< HEAD
 # Web application for the "Know your graph" chapter of "Learning Neo4j, 3rd edition" 
 ## To be published in 2023 or sooner
 
-Steps:
+## Steps:
 * have Python
 * have pip
 * install Streamlit with pip install streamlit
@@ -14,5 +15,6 @@ Steps:
 
 
 
+## Video Tour
 
 [![Video Tour](https://www.youtube.com/watch?v=4RbJErGQgac)](https://www.youtube.com/watch?v=4RbJErGQgac)
