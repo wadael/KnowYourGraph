@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Web application for the "Know your graph" chapter of "Learning Neo4j, 3rd edition" 
 ## To be published in 2023 or sooner
 
@@ -17,4 +16,4 @@
 
 ## Video Tour
 
-[![Video Tour](https://www.youtube.com/watch?v=4RbJErGQgac)](https://www.youtube.com/watch?v=4RbJErGQgac)
+[![Video Tour](https://img.youtube.com/vi/4RbJErGQgac/0.jpg)](https://www.youtube.com/watch?v=4RbJErGQgac)
