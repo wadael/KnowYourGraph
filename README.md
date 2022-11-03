@@ -10,10 +10,10 @@
 * Install APOC on your Neo4j Server 
 * start your Neo4j Server
 * (once) install the required Python libraries with "pip install -r requirements.txt"
-* execute  "streamlit run 00_🧠KYG Landing.py"
+* in a shell, execute "streamlit run 00_🧠KYG Landing.py"
 
 
 
 ## Video Tour
-
 [![Video Tour](https://img.youtube.com/vi/4RbJErGQgac/0.jpg)](https://www.youtube.com/watch?v=4RbJErGQgac)
+

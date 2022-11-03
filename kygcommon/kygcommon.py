@@ -6,7 +6,6 @@ import pandas as pd
 
 def doConfigAndSidebar(anim):
     with st.sidebar:
-        st.sidebar.header("🎉 Welcome")
         st.sidebar.title("Learning Neo4j 3rd Edition")
         if len(anim)==0:
             anim = "anims/90021-graph-stats.json"
@@ -15,15 +14,31 @@ def doConfigAndSidebar(anim):
         st_lottie(data)
 
     if 'driver' not in st.session_state:
-        driver = GraphDatabase.driver("neo4j://localhost:7687", auth=("neo4j", "password"))
-        st.session_state.driver = driver
-
+        try:
+            driver = GraphDatabase.driver("neo4j://localhost:7687", auth=("neo4j", "password"))
+            st.session_state.driver = driver
+        except:
+            st.error("Is your Neo4j server running ??")
+    if 'driver' not in st.session_state:
+        st.error("Is your Neo4j server running ???")
+        st.stop()
 def getDataFrameFromReadQuery(query):
     driver = st.session_state.driver
-    df = pd.DataFrame()
-    with driver.session() as session:
-        result = session.run(query)
-        for record in result:
-            df = df.append(record.data(), ignore_index=True)
-    session.close()
-    return df
+    if 'driver' not in st.session_state:
+        st.error("🚨 Is your Neo4j server running ??")
+    else:
+        df = pd.DataFrame()
+        with driver.session() as session:
+            result = session.execute_read(query)
+            for record in result:
+                df = df.append(record.data(), ignore_index=True)
+        session.close()
+        return df
+
+def get_movies(tx, name):
+    result = tx.run("""
+        MATCH (p:Person {name:$name})-[:ACTED_IN]->(m:Movie )
+        RETURN m
+        ORDER BY m.released
+    """, name=name)
+    return [record["m"] for record in result]

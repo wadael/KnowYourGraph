@@ -9,15 +9,16 @@ doConfigAndSidebar("anims/8586-rocket-in-space.json")
 st.write("# 💡 About")
 st.write("## ❓ What is that ?")
 st.write("""
-Made for the third edition of Learning Neo4j , edited by Pakt Publishing http://packtpub.com, this web application uses 
+Made for the third edition of Learning Neo4j , edited by Packt Publishing http://packtpub.com, this web application uses 
 Streamlit and Python to give you some insights about the content of your graph.\n
-THe book will teach you how to add your own indicators.
+The book will teach you how to add your own indicators.
 Source code is available on Github : https://github.com/wadael/KnowYourGraph
+
 """)
 
 col0, col1, col2 = st.columns([1,4,4])
 with col0:
-    st.image("https://yt3.ggpht.com/ytc/AMLnZu8oL48Yh2b0qLdKpygdG9oUC6NLjKPSNk9j57Lwcg=s88-c-k-c0x00ffffff-no-rj")
+    st.image("images/wad.jpg")
 with col1:
     st.write("## 🧍 Author")
 
